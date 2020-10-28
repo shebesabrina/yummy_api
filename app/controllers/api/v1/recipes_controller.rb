@@ -1,5 +1,8 @@
 class Api::V1::RecipesController < ApplicationController
     def index
-        render json: Recipe.all
+        recipes = Recipe.all.map do |obj|
+            obj[:title] && obj[:image]
+        end
+        render json: recipes
     end
 end
