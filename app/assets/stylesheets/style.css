@@ -68,6 +68,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+.receipe-tag {
+ padding: 14px 16px; 
+ font-family: 'Courier New', Courier, monospace;
+}
 footer { 
     width: 100%; 
     bottom: 0px; 

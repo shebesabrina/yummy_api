@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Show Page Layout</title> 
+    <link rel="stylesheet" href="styles.css">
+</head> 
+
+<body> 
+	
+	<!-- Header Section -->
+	<header> 
+		 
+	</header> 
+	
+	<!-- Menu Navigation Bar -->
+	<div class="menu"> 
+        <%= link_to "Back", :back %>
+	</div> 
+	
+	<!-- Body section -->
+	<div class = "all-recipes"> 
+		<section> 
+            <div class="recipe-title"><%= @recipe["title"] %></div>
+            <div class="recipe-image"><%= image_tag @recipe["image"] %></div>
+            <div class="receipe-tag">Vegetarian: <%=  @recipe["vegetarian"] %></div>
+            <div class="receipe-tag">Vegan: <%=  @recipe["vegan"] %></div>
+            <div class="receipe-tag">Gluten Free: <%=  @recipe["glutenFree"] %></div>
+            <div class="receipe-tag">Dairy Free: <%=  @recipe["dairyFree"] %></div>
+            <div class="receipe-tag">Weight Watcher Points: <%=  @recipe["weightWatcherSmartPoints"] %></div> 
+            <ul class="receipe-ingredients">
+                <h2>Ingredients:</h2> <%  @recipe["extendedIngredients"].each do |ingredient| %>
+                    <li>
+                        <%= ingredient["originalName"] %>
+                    </li>
+                <% end %>
+            </ul> 
+            <div class="receipe-description"><%= @recipe["instructions"] %></div>
+            <h3 class="chef-name"><%= @recipe["sourceName"] %></h3>
+		</section> 
+	</div> 
+</body> 
+</html>	
+
+
