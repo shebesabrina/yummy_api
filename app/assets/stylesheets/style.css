@@ -54,6 +54,7 @@ body {
 }
 .recipe-title {
     font-family: Palatino, URW Palladio L, serif;
+    padding: 20px 16px;
     font-size: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -71,6 +72,16 @@ body {
 .receipe-tag {
  padding: 14px 16px; 
  font-family: 'Courier New', Courier, monospace;
+}
+.receipe-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chef-name {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 footer { 
     width: 100%; 
