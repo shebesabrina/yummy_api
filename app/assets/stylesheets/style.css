@@ -1,12 +1,23 @@
+
 .head-1 { 
     font-size:40px; 
-    color:#009900; 
+    color:#5fb374; 
+    background-color: #2D4A35;
     font-weight:bold; 
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } 
 .head-2 { 
     font-size:17px; 
+    font-style: italic;
     margin-left:10px; 
     margin-bottom:15px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } 
 body { 
     margin: 0 auto; 
@@ -17,7 +28,7 @@ body {
 .menu { 
     position: sticky; 
     top: 0; 
-    background-color: #009900; 
+    background-color: #385c42; 
     padding:10px 0px 10px 0px; 
     color:white; 
     margin: 0 auto; 
@@ -35,14 +46,36 @@ body {
     right: auto; 
     float: right; 
 } 
+.all-recipes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.recipe-title {
+    font-family: Palatino, URW Palladio L, serif;
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.recipe-image {
+    padding: 14px 16px; 
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 footer { 
     width: 100%; 
     bottom: 0px; 
-    background-color: #000; 
+    background-color: #494d4a; 
     color: #fff; 
     position: sticky; 
     padding-top:20px; 
-    padding-bottom:50px; 
+    padding-bottom:30px; 
     text-align:center; 
     font-size:30px; 
     font-weight:bold; 
