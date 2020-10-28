@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_28_172613) do
+ActiveRecord::Schema.define(version: 2020_10_28_211931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "recipe_items", force: :cascade do |t|
+    t.string "title"
+    t.string "image"
+    t.string "description"
+    t.string "chef_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recipe_tag_items", force: :cascade do |t|
+    t.bigint "recipe_item_id", null: false
+    t.bigint "tag_item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recipe_item_id"], name: "index_recipe_tag_items_on_recipe_item_id"
+    t.index ["tag_item_id"], name: "index_recipe_tag_items_on_tag_item_id"
+  end
 
   create_table "recipe_tags", force: :cascade do |t|
     t.bigint "recipe_id", null: false
@@ -31,10 +49,18 @@ ActiveRecord::Schema.define(version: 2020_10_28_172613) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tag_items", force: :cascade do |t|
+    t.string "dietary_restrictions"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "dietary_restrictions"
   end
 
+  add_foreign_key "recipe_tag_items", "recipe_items"
+  add_foreign_key "recipe_tag_items", "tag_items"
   add_foreign_key "recipe_tags", "recipes"
   add_foreign_key "recipe_tags", "tags"
 end

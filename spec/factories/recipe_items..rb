@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :recipe do
+  factory :recipe_item do
     title { Faker::Food.dish }
     image { Faker::Avatar.image }
     description { Faker::Food.description }
