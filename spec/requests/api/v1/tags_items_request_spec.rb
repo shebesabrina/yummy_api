@@ -2,9 +2,9 @@ require 'rails_helper'
 
 describe "Tags API" do
     it 'sends a list of tags' do
-        create_list(:tag, 2)
+        create_list(:tag_item, 2)
  
-        get '/api/v1/tags'
+        get '/api/v1/tag_items'
 
         expect(response).to  be_successful
 
@@ -22,9 +22,9 @@ describe "Tags API" do
     end
 
     it "can get one tag by its id" do
-        id = create(:tag).id
+        id = create(:tag_item).id
       
-        get "/api/v1/tags/#{id}"
+        get "/api/v1/tag_items/#{id}"
       
         tag = JSON.parse(response.body, symbolize_names: true)
       
