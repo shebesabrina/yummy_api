@@ -20,4 +20,20 @@ describe "Tags API" do
             expect(tag[:dietary_restrictions]).to be_an(String)
         end
     end
+
+    it "can get one tag by its id" do
+        id = create(:tag).id
+      
+        get "/api/v1/tags/#{id}"
+      
+        tag = JSON.parse(response.body, symbolize_names: true)
+      
+        expect(response).to be_successful
+      
+        expect(tag).to have_key(:id)
+        expect(tag[:id]).to be_an(Integer)
+
+        expect(tag).to have_key(:dietary_restrictions)
+        expect(tag[:dietary_restrictions]).to be_an(String)
+    end
 end
